@@ -1,15 +1,8 @@
 import * as React from 'react';
 import { Grid, Paper } from '@material-ui/core';
-import { match as RMatch } from 'react-router';
 import { useFeedbacks } from '../../hooks/useFeedbacks';
 
-type DetailsProps = {
-  match: RMatch<{
-    id: string;
-  }>;
-};
-
-const Details: React.FC<DetailsProps> = () => {
+const Details: React.FC = () => {
   const [feedbacks] = useFeedbacks();
   return (
     <Grid container direction="column" style={{ padding: '50px' }} spacing={5}>

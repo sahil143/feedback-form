@@ -7,4 +7,4 @@ class FeedbackForm(models.Model):
   email = models.EmailField()
   phone_number = models.BigIntegerField()
   password = models.CharField(max_length=16)
-  video = models.BinaryField()
+  video = models.TextField()
