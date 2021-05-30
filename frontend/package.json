@@ -31,7 +31,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier-all": "prettier --write '**/*.{ts,tsx,json}'"
+    "prettier-all": "prettier --write '**/*.{ts,tsx,json}'",
+    "eslint": "eslint --ext .ts,.tsx, --color"
   },
   "browserslist": {
     "production": [
