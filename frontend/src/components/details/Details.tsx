@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Grid, Paper } from '@material-ui/core';
 import { useFeedbacks } from '../../hooks/useFeedbacks';
+import DetailItem from './DetailItem';
 
 const Details: React.FC = () => {
   const [feedbacks] = useFeedbacks();
@@ -9,9 +10,7 @@ const Details: React.FC = () => {
       {feedbacks ? (
         feedbacks.map((feedback) => (
           <Grid key={feedback.id} item>
-            <Paper style={{ padding: '20px' }}>
-              {JSON.stringify(feedback)}
-            </Paper>
+            <DetailItem feedback={feedback} />
           </Grid>
         ))
       ) : (
