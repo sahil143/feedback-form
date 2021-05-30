@@ -9,15 +9,12 @@ export const useMediaRecorder = (
 
   const camRef = React.useCallback(
     (webcam: Webcam) => {
-      console.log('############### - webcam', webcam, webcam?.stream);
       if (webcam?.stream) {
         recorderRef.current = new MediaRecorder(webcam.stream as MediaStream, {
           mimeType: 'video/webm',
         });
-        console.log('############### - webcam - 2', recorderRef.current);
         recorderRef.current.addEventListener('dataavailable', callback);
       }
-      console.log('############### - webcam - 3');
     },
     [callback],
   );
@@ -29,7 +26,6 @@ export const useMediaRecorder = (
   );
 
   const startRecording = React.useCallback(() => {
-    console.log('############### - start', recorderRef.current);
     recorderRef.current?.start();
     setIsRecording(true);
   }, []);

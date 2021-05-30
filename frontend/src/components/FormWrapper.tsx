@@ -1,20 +1,46 @@
 import * as React from 'react';
+
 import { Button, Grid } from '@material-ui/core';
 import { FormProvider, useForm } from 'react-hook-form';
 import { StepperContext } from './Stepper';
 import { useYupValidationResolver } from '../hooks';
+import { FormDefaultValueType } from '../type';
 
-type FormWrapperType = {
+type FormWrapperProps = {
+  /**
+   * label to show on submit button
+   * @default 'Submit'
+   */
   submitLabel?: string;
+  /**
+   * label to show on cancel button
+   * @default 'Cancel
+   */
   cancelLabel?: string;
-  onSubmit: (data: any) => void;
+  /**
+   * submit button callback
+   */
+  onSubmit: (data: { [key: string]: string | number | boolean }) => void;
+  /**
+   * cancel button callback
+   */
   onCancel?: () => void;
+  /**
+   * yup validation schema for the form, will be resolved using hook `useYupValidationResolver`
+   */
   validationSchema: any;
-  defaultValues?: { [key: string]: any };
+  /**
+   * default values for form
+   */
+  defaultValues?: FormDefaultValueType;
+  /**
+   * should be set to true when Form is being wrapper by Stepper component and individual step is a form
+   * @default false
+   */
   stepperForm?: boolean;
 };
 
-const FormWrapper: React.FC<FormWrapperType> = ({
+const FormWrapper: React.FC<FormWrapperProps> = ({
   children,
   onSubmit,
   onCancel,

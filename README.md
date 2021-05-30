@@ -11,9 +11,11 @@ This project is written in Django and React(Typescript).
 ### Backend
 
 Make sure you have python3 (pip3) installed and run
+
 ```sh
 ./backend.sh # will serve the backend api on localhost:8000/api
 ```
+
 or follow the steps from `backend.sh` individually
 
 if you face any permission issue run
@@ -29,6 +31,7 @@ Make sure you have `nodejs(stable)` and `yarn` installed
 ```sh
 ./frontend.sh # will serve the frontend on localhost:3000
 ```
+
 if you face any permission issue run
 
 ```
@@ -45,7 +48,7 @@ chmod +x ./frontend.sh
 
 ### Backend
 
-This project depends on 
+This project depends on
 
 ```
 Django
@@ -69,7 +72,6 @@ axios
 
 ## TODO
 
-
-
-
-
+- Unit tests for frontend
+- Unit tests for backend
+- Debug: Why useMediaRecorder hook is not working properly with `<Webcam />`

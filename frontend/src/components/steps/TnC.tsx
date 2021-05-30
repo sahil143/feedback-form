@@ -20,7 +20,6 @@ const TnC: React.FC = () => {
   return (
     <FormWrapper
       onSubmit={(data) => {
-        console.log('##############', formState, data);
         submitForm(formState).then(() => {
           history.push(`/feedbacks`);
         });

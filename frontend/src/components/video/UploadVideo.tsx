@@ -3,7 +3,12 @@ import { Button } from '@material-ui/core';
 import { useFormContext } from 'react-hook-form';
 
 type UploadVideoProps = {
+  /** key to be registered using react-hook-form `register` method */
   name: string;
+  /**
+   * label to show on the Upload button
+   * @default 'Upload video'
+   */
   label?: string;
 };
 
@@ -15,14 +20,14 @@ const UploadVideo: React.FC<UploadVideoProps> = ({
 
   const [previewVideo, setPreviewVideo] = React.useState<string>();
   const handleChange = React.useCallback(
-    (e: any) => {
-      if (!e.target.files[0]) return;
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (!e.target?.files?.[0]) return;
       const fileReader = new FileReader();
       fileReader.onloadend = () => {
         setPreviewVideo(fileReader.result as string);
         setValue(name, fileReader.result);
       };
-      fileReader.readAsDataURL(e.target.files[0] as Blob);
+      fileReader.readAsDataURL(e.target?.files?.[0] as Blob);
     },
     [setPreviewVideo, setValue, name],
   );

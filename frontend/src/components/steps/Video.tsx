@@ -48,7 +48,6 @@ const VideoForm: React.FC = () => {
   return (
     <FormWrapper
       onSubmit={(data) => {
-        console.log('#################### - 123', data);
         if (data) {
           setFormState?.((prevState) => ({ ...prevState, ...data }));
         }

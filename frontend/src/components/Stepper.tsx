@@ -17,10 +17,15 @@ type StepperContextType = {
 
 export const StepperContext = React.createContext<StepperContextType>({});
 
-const Stepper: React.FC<{ controlled?: boolean }> = ({
-  children,
-  controlled = false,
-}) => {
+type StepperProps = {
+  /**
+   * should be set to true when steps are controlled by another compoenent using StepperContext
+   * @default false
+   */
+  controlled?: boolean;
+};
+
+const Stepper: React.FC<StepperProps> = ({ children, controlled = false }) => {
   const [activeStep, setActiveStep] = React.useState<number>(0);
 
   const [activeStepContent, childrenLength] = React.useMemo(() => {

@@ -9,6 +9,7 @@ import {
 import { useFormContext } from 'react-hook-form';
 
 type CheckboxFieldProps = {
+  /** key to be registered using react-hook-form `register` method */
   name: string;
   label: string;
 } & CheckboxProps;

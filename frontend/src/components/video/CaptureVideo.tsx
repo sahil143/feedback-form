@@ -5,6 +5,7 @@ import { useFormContext } from 'react-hook-form';
 import Webcam from 'react-webcam';
 
 type CaptureVideoProps = {
+  /** key to be registered using react-hook-form `register` method */
   name: string;
 };
 

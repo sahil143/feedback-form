@@ -1,12 +1,5 @@
 import * as React from 'react';
-
-export type FormState = {
-  name: string;
-  email: string;
-  phone_number: number | null;
-  video: string;
-  password: string;
-};
+import { FormState } from '../type';
 
 type FormStateContextType = {
   formState: FormState;
