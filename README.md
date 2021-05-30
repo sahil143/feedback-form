@@ -1,6 +1,6 @@
 # Feedback Form
 
-This project is written in Django and React(Typescript).
+This project is coded with ❤️ using Django and React(Typescript).
 
 ## Demo
 
