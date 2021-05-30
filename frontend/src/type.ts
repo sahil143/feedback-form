@@ -1,5 +1,3 @@
-import { SchemaOf } from "yup";
-
 export type FormState = PersonalInfoType &
   VideoType &
   Omit<PasswordType, keyof { password_repeat: string }>;
