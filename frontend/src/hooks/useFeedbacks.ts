@@ -1,13 +1,14 @@
 import * as React from 'react';
+import axios from 'axios';
 import { Feedback } from '../type';
-import { getFeedbacks } from '../utils';
 
 export const useFeedbacks = () => {
   const [feedbacks, setFeedbacks] = React.useState<Feedback[]>();
   const [err, setError] = React.useState();
   React.useEffect(() => {
     let ignore = false;
-    getFeedbacks()
+    axios
+      .get(`http://127.0.0.1:8000/api/feedbacks/`)
       .then((resp) => {
         if (ignore) return;
         setFeedbacks(resp.data);
