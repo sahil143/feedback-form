@@ -44,6 +44,25 @@ chmod +x ./frontend.sh
 
 <i>Improvements</i>: Some improvements can be done by providing a specific url for each feedback e.g.: `localhost:3000/feedbacks/:id` and on submit instead of redirecting to `/feedbacks` user can be redirected to the specific feedback e.g.: `/feedback/1`
 
+## Documentation
+
+Backend APIs
+```sh
+GET /api/feedbacks #to get all the feedbacks
+POST /api/feedbacks #to create a new feedback
+GET /api/feebacks/1 #to get a specific feedback using id
+```
+
+Data Structure
+```json
+{
+  "name": "string",
+  "email": "string",
+  "phone_number": "number",
+  "video": "string", // a Base64 encoded string
+  "password": "string"
+}
+```
 ## Dependencies
 
 ### Backend
